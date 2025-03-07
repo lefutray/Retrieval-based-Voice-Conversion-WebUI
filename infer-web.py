@@ -1602,6 +1602,9 @@ with gr.Blocks(title="RVC WebUI") as app:
                 if tab_faq == "常见问题解答":
                     with open("docs/cn/faq.md", "r", encoding="utf8") as f:
                         info = f.read()
+                elif tab_faq == "Preguntas frecuentes":
+                    with open("docs/es/faq_es.md", "r", encoding="utf8") as f:
+                        info = f.read()
                 else:
                     with open("docs/en/faq_en.md", "r", encoding="utf8") as f:
                         info = f.read()
