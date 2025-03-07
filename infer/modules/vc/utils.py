@@ -1,6 +1,15 @@
 import os
+import torch
 
-from fairseq import checkpoint_utils
+# Reemplazamos la importación de fairseq con una implementación básica
+class MockCheckpointUtils:
+    @staticmethod
+    def load_model_ensemble_and_task(checkpoint_path, **kwargs):
+        # Implementación simplificada que devuelve un modelo cargado
+        model = torch.load(checkpoint_path, map_location='cpu')
+        return [model], None
+
+checkpoint_utils = MockCheckpointUtils()
 
 
 def get_index_path_from_model(sid):
